@@ -45,6 +45,22 @@ public class App {
      * to the power forLoop
      */
     // System.out.println(powForLoop(3, 4));
+    /*
+     * nested loops
+     */
+    // nestedNumberGrid();
+  }
+
+  public static void nestedNumberGrid() {
+    int[][] numberGrid = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 0 } };
+
+      for(int i = 0; i < numberGrid.length; i++){
+        for(int j = 0; j < numberGrid[i].length; j++){
+          System.out.println(numberGrid[i][j]);
+        }
+        System.out.println("end of 1 loop");
+      }
+
   }
 
   public static int powForLoop(int baseNum, int powNum) {
