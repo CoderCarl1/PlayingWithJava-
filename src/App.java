@@ -1,5 +1,6 @@
 package src;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class App {
@@ -49,17 +50,42 @@ public class App {
      * nested loops
      */
     // nestedNumberGrid();
+    /*
+     * Try / Catch
+     */
+
+    tryCatch();
+  }
+
+  public static void tryCatch() {
+    Scanner keyboardInput = new Scanner(System.in);
+    try {
+      System.out.print("Enter a Number: ");
+      double num = keyboardInput.nextDouble();
+      System.out.print(num);
+
+    } catch (Exception e) {
+      if (e instanceof InputMismatchException) {
+        System.out.println("Enter a number, letters or other characters are not valid input.");
+        tryCatch();
+      } else {
+
+        System.out.println(e);
+      }
+      // System.out.println("invalid input, please enter a number.");
+      // tryCatch();
+    }
   }
 
   public static void nestedNumberGrid() {
     int[][] numberGrid = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 0 } };
 
-      for(int i = 0; i < numberGrid.length; i++){
-        for(int j = 0; j < numberGrid[i].length; j++){
-          System.out.println(numberGrid[i][j]);
-        }
-        System.out.println("end of 1 loop");
+    for (int i = 0; i < numberGrid.length; i++) {
+      for (int j = 0; j < numberGrid[i].length; j++) {
+        System.out.println(numberGrid[i][j]);
       }
+      System.out.println("end of 1 loop");
+    }
 
   }
 
