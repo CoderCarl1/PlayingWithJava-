@@ -9,7 +9,7 @@ public class App {
     /*
      * Calculator
      */
-    // Scanner keyboardInput = new Scanner(System.in);
+    //// Scanner keyboardInput = new Scanner(System.in);
     // System.out.print("Enter a Number: ");
     // double num1 = keyboardInput.nextDouble();
     // System.out.print("Enter an Operator: ");
@@ -55,20 +55,52 @@ public class App {
      */
     // tryCatch();
     /*
-    Playing with classes
-    */
-    //without constructor
-    Student student1 = playWithClasses("jim", "weeks", 24, 4.2, false);
-    System.out.println(student1);
+     * Playing with classes
+     */
+    // without constructor
+    // Student student1 = playWithClasses("jim", "weeks", 24, 4.2, false);
+    // System.out.println(student1);
 
-    //with constructor
-    Book book1 = new Book("title1", "author1", 501, "eng");
-    Book book2 = new Book("title2", "author2", 502, "eng");
-    
-
+    // with constructor
+    // Book book1 = new Book("title1", "author1", 501, "eng");
+    // Book book2 = new Book("title2", "author2", 502, "eng");
+    System.out.println(multipleChoice());
   }
 
-  public static Student playWithClasses(String firstName,String lastName, int age, double gpa, boolean onProbation){
+  public static String multipleChoice() {
+    String q1 = "What color are Apples?\n" + "(a) Red/Green\n(b) Yellow\n(c) Magenta\n";
+    String q2 = "What color are Bananas?\n" + "(a) Red/Green\n(b) Yellow\n(c) Magenta\n";
+
+    Question[] questions = { new Question(q1, "a"), new Question(q2, "b") };
+    return takeTest(questions);
+  }
+
+  public static String takeTest(Question[] questions) {
+    int score = 0;
+    Scanner keyboardInput = new Scanner(System.in);
+
+    for (int i = 0; i < questions.length; i++) {
+      // try{
+
+      // } catch (Exception e){
+
+      // }
+      System.out.println(questions[i].prompt);
+      String answer = keyboardInput.nextLine();
+      if (answer.equals(questions[i].answer)) {
+        System.out.println("Correct!\n" + "You have " + (questions.length - (i + 1)) + " Question\\s left.");
+        score++;
+      } else {
+        System.out
+            .println("boo boo! wrong answer!\n" + "You have " + (questions.length - (i + 1)) + " Question\\s left.");
+      }
+    }
+    if (score == questions.length)
+      return "You got all the questions correct! you rock!";
+    return "You got | " + score + " / " + questions.length + " |";
+  }
+
+  public static Student playWithClasses(String firstName, String lastName, int age, double gpa, boolean onProbation) {
     // if (gpa < 3) throw
     Student myStudent = new Student();
     myStudent.firstName = firstName;
