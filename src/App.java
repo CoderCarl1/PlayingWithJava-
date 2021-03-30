@@ -57,14 +57,28 @@ public class App {
     /*
      * Playing with classes
      */
-    // without constructor
-    // Student student1 = playWithClasses("jim", "weeks", 24, 4.2, false);
-    // System.out.println(student1);
-
     // with constructor
     // Book book1 = new Book("title1", "author1", 501, "eng");
     // Book book2 = new Book("title2", "author2", 502, "eng");
-    System.out.println(multipleChoice());
+
+    /*
+     * Multiple Choice questionare
+     */
+    // System.out.println(multipleChoice());
+
+    /*
+      Class Methods
+    */
+    // Student myStudent = new Student("mike", "2nd Name", 3.6, "Computer Science", 26, false);
+    // System.out.println(myStudent.isOnHonorRoll());
+
+    /*
+    Class Getters and Setters & Private
+    */
+    Movie movie1 = new Movie("The avengers", "Joss Whedon", "PG-13");
+    Movie movie2 = new Movie("Step Brothers", "Adam McKat", "R");
+    System.out.println(movie1.getTitle());
+    System.out.println(movie2.getRating());
   }
 
   public static String multipleChoice() {
@@ -98,19 +112,6 @@ public class App {
     if (score == questions.length)
       return "You got all the questions correct! you rock!";
     return "You got | " + score + " / " + questions.length + " |";
-  }
-
-  public static Student playWithClasses(String firstName, String lastName, int age, double gpa, boolean onProbation) {
-    // if (gpa < 3) throw
-    Student myStudent = new Student();
-    myStudent.firstName = firstName;
-    myStudent.lastName = lastName;
-    myStudent.age = age;
-    myStudent.gpa = gpa;
-    myStudent.onProbation = onProbation;
-
-    return myStudent;
-
   }
 
   public static void tryCatch() {
