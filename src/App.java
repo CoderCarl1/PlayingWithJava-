@@ -53,8 +53,32 @@ public class App {
     /*
      * Try / Catch
      */
+    // tryCatch();
+    /*
+    Playing with classes
+    */
+    //without constructor
+    Student student1 = playWithClasses("jim", "weeks", 24, 4.2, false);
+    System.out.println(student1);
 
-    tryCatch();
+    //with constructor
+    Book book1 = new Book("title1", "author1", 501, "eng");
+    Book book2 = new Book("title2", "author2", 502, "eng");
+    
+
+  }
+
+  public static Student playWithClasses(String firstName,String lastName, int age, double gpa, boolean onProbation){
+    // if (gpa < 3) throw
+    Student myStudent = new Student();
+    myStudent.firstName = firstName;
+    myStudent.lastName = lastName;
+    myStudent.age = age;
+    myStudent.gpa = gpa;
+    myStudent.onProbation = onProbation;
+
+    return myStudent;
+
   }
 
   public static void tryCatch() {
