@@ -30,7 +30,48 @@ public class App {
     /*
      * while loop Guessing Game
      */
-    System.out.println(guessingGame());
+    // System.out.println(guessingGame());
+
+    /*
+     * forLoop
+     */
+    // forLoop();
+
+    /*
+     * Array forLoop
+     */
+    // arrayForLoop();
+    /*
+     * to the power forLoop
+     */
+    // System.out.println(powForLoop(3, 4));
+  }
+
+  public static int powForLoop(int baseNum, int powNum) {
+    int result = 1;
+    for (int i = 0; i < powNum; i++) {
+      result = result * baseNum;
+    }
+    return result;
+  }
+
+  public static void forLoop() {
+    for (int i = 0; i <= 10; i++) {
+      if (i == 10) {
+        System.out.println(i);
+      } else {
+        System.out.print(i + ", ");
+      }
+    }
+    ;
+  }
+
+  public static void arrayForLoop() {
+    String[] friends = { "bob", "Garry", "Jane" };
+    for (int i = 0; i < friends.length; i++) {
+      System.out.println(friends[i]);
+    }
+    ;
   }
 
   public static String guessingGame() {
