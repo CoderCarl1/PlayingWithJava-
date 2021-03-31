@@ -105,19 +105,27 @@ public class App {
      * Class implementation of interfaces
      */
 
-    Animal[] animals = { new Cow(), new Bird(), new Dog() };
+    // Animal[] animals = { new Cow(), new Bird(), new Dog() };
 
-    Animal myCow = new Cow();
-    myCow.eat();
+    // Animal myCow = new Cow();
+    // myCow.eat();
 
-    Animal myDog = new Dog();
-    myDog.eat();
+    // Animal myDog = new Dog();
+    // myDog.eat();
 
-    for(int i = 0; i < animals.length; i++){
-      if (i % 2 == 0) animals[i].eat();
-      if (i % 2 != 0) animals[i].speak();
-    }
+    // for(int i = 0; i < animals.length; i++){
+    // if (i % 2 == 0) animals[i].eat();
+    // if (i % 2 != 0) animals[i].speak();
+    // }
+    /*
+     * class Non-static methods
+     */
+    App myApp = new App();
+      myApp.nonStaticMethod();
+  }
 
+  public void nonStaticMethod(){
+    System.out.println("Hi");
   }
 
   public static String multipleChoice() {
