@@ -92,8 +92,15 @@ public class App {
     /*
      * Class static methods
      */
-    Prints.sayGoodbye();
-    System.out.println(Prints.feetInMile);
+    // Prints.sayGoodbye();
+    // System.out.println(Prints.feetInMile);
+    /*
+     * Class extends
+     */
+    Chef normalChef = new Chef();
+    normalChef.makeSpecialDish();
+    ItalianChef italianChef = new ItalianChef();
+    italianChef.makeSpecialDish();
   }
 
   public static String multipleChoice() {
