@@ -97,10 +97,27 @@ public class App {
     /*
      * Class extends
      */
-    Chef normalChef = new Chef();
-    normalChef.makeSpecialDish();
-    ItalianChef italianChef = new ItalianChef();
-    italianChef.makeSpecialDish();
+    // Chef normalChef = new Chef();
+    // normalChef.makeSpecialDish();
+    // ItalianChef italianChef = new ItalianChef();
+    // italianChef.makeSpecialDish();
+    /*
+     * Class implementation of interfaces
+     */
+
+    Animal[] animals = { new Cow(), new Bird(), new Dog() };
+
+    Animal myCow = new Cow();
+    myCow.eat();
+
+    Animal myDog = new Dog();
+    myDog.eat();
+
+    for(int i = 0; i < animals.length; i++){
+      if (i % 2 == 0) animals[i].eat();
+      if (i % 2 != 0) animals[i].speak();
+    }
+
   }
 
   public static String multipleChoice() {
