@@ -81,14 +81,19 @@ public class App {
     // System.out.println(movie1.getTitle());
     // System.out.println(movie2.getRating());
     /*
+     * Class static variables
+     */
+    // Song holiday = new Song("Holiday", "Green Day", 200);
+    // System.out.println(holiday.getSongsCount());
+    // Song americanIdiot = new Song("American Idiot", "Green Day", 168);
+    // System.out.println(americanIdiot.getSongsCount());
+    // Song africa = new Song("Africa", "Toto", 300);
+    // System.out.println(africa.getSongsCount());
+    /*
      * Class static methods
      */
-    Song holiday = new Song("Holiday", "Green Day", 200);
-    System.out.println(holiday.getSongsCount());
-    Song americanIdiot = new Song("American Idiot", "Green Day", 168);
-    System.out.println(americanIdiot.getSongsCount());
-    Song africa = new Song("Africa", "Toto", 300);
-    System.out.println(africa.getSongsCount());
+    Prints.sayGoodbye();
+    System.out.println(Prints.feetInMile);
   }
 
   public static String multipleChoice() {
