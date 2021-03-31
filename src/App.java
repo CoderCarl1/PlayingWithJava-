@@ -67,18 +67,28 @@ public class App {
     // System.out.println(multipleChoice());
 
     /*
-      Class Methods
-    */
-    // Student myStudent = new Student("mike", "2nd Name", 3.6, "Computer Science", 26, false);
+     * Class Methods
+     */
+    // Student myStudent = new Student("mike", "2nd Name", 3.6, "Computer Science",
+    // 26, false);
     // System.out.println(myStudent.isOnHonorRoll());
 
     /*
-    Class Getters and Setters & Private
-    */
-    Movie movie1 = new Movie("The avengers", "Joss Whedon", "PG-13");
-    Movie movie2 = new Movie("Step Brothers", "Adam McKat", "R");
-    System.out.println(movie1.getTitle());
-    System.out.println(movie2.getRating());
+     * Class Getters and Setters & Private
+     */
+    // Movie movie1 = new Movie("The avengers", "Joss Whedon", "PG-13");
+    // Movie movie2 = new Movie("Step Brothers", "Adam McKat", "R");
+    // System.out.println(movie1.getTitle());
+    // System.out.println(movie2.getRating());
+    /*
+     * Class static methods
+     */
+    Song holiday = new Song("Holiday", "Green Day", 200);
+    System.out.println(holiday.getSongsCount());
+    Song americanIdiot = new Song("American Idiot", "Green Day", 168);
+    System.out.println(americanIdiot.getSongsCount());
+    Song africa = new Song("Africa", "Toto", 300);
+    System.out.println(africa.getSongsCount());
   }
 
   public static String multipleChoice() {
