@@ -2,6 +2,7 @@ package src;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import src.p1.MyClass;
 
 public class App {
   public static void main(String[] args) {
@@ -120,11 +121,15 @@ public class App {
     /*
      * class Non-static methods
      */
-    App myApp = new App();
-      myApp.nonStaticMethod();
+    // App myApp = new App();
+    // myApp.nonStaticMethod();
+    /*
+     * importing Classes
+     */
+
   }
 
-  public void nonStaticMethod(){
+  public void nonStaticMethod() {
     System.out.println("Hi");
   }
 
