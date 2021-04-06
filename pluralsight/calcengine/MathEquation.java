@@ -52,15 +52,19 @@ public class MathEquation {
     setLeftVal(leftVal);
     setRightVal(rightVal);
     execute();
-    result = (int)result;
+    result = (int) result;
+  }
+
+  public static double getAverageResult() {
+    return sumOfResults / numberOfCalculations;
   }
 
   public double getResult() {
     return this.result;
   }
 
-  public static double getAverageResult() {
-    return sumOfResults / numberOfCalculations;
+  public void setResult(double result) {
+    this.result = result;
   }
 
   public double getLeftVal() {
