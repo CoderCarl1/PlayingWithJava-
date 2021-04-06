@@ -2,9 +2,13 @@ package src;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
-import src.p1.MyClass;
+// import src.p1.MyClass;
+// import java.time.LocalDate;
+// import java.time.LocalDateTime;
+// import java.time.Month;
 
 public class App {
+  public final long seconds = 1000000000;
   public static void main(String[] args) {
 
     /*
@@ -126,7 +130,8 @@ public class App {
     /*
      * importing Classes
      */
-
+    
+    // System.out.println(LocalDate.of(2011, Month.APRIL, 25) + seconds );
   }
 
   public void nonStaticMethod() {
