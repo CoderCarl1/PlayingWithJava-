@@ -1,4 +1,5 @@
 package pluralsight;
+
 import pluralsight.calcengine.*;
 
 public class Main {
@@ -11,13 +12,26 @@ public class Main {
 
         Adder adder = new Adder();
         doCalculation(adder, 25.0d, 92.0d);
+
+        performMoreCalculations();
     }
 
-    static void doCalculation(CalculateBase calculation, double leftVal, double rightVal){
+    private static void performMoreCalculations() {
+        CalculateBase[] calculations = { new Divider(100.0d, 50.0d), new Adder(25.0d, 92.0d),
+                new Subtract(225.0d, 17.0d), new Multiplier(11.0d, 3.0d)
+        };
+        System.out.println();
+        System.out.println("Array calculations");
+        for(CalculateBase calculation : calculations){
+            calculation.calculate();
+        }
+    }
+
+    static void doCalculation(CalculateBase calculation, double leftVal, double rightVal) {
         calculation.setLeftVal(leftVal);
         calculation.setRightVal(rightVal);
         calculation.calculate();
-        System.out.println("Calc result = " + calculation.getResult());
+        // System.out.println("Calc result = " + calculation.getResult());
     }
 
     static void performCalculations() {
@@ -27,11 +41,11 @@ public class Main {
         equations[2] = new MathEquation('s', 225.0d, 17.0d);
         equations[3] = new MathEquation('m', 11.0d, 3.0d);
 
-        for(MathEquation equation : equations){
+        for (MathEquation equation : equations) {
             equation.execute();
             System.out.println("result = " + equation.getResult());
         }
-        System.out.println("Average result = " +MathEquation.getAverageResult());
+        System.out.println("Average result = " + MathEquation.getAverageResult());
 
         MathEquation equationOverload = new MathEquation('d');
         double leftDouble = 9.0d;

@@ -1,7 +1,15 @@
 package pluralsight.calcengine;
 
-public class CalculateBase {
+public abstract class CalculateBase {
   private double leftVal, rightVal, result;
+
+  public CalculateBase() {
+  }
+
+  public CalculateBase(double leftVal, double rightVal) {
+    setLeftVal(leftVal);
+    setRightVal(rightVal);
+  }
 
   public double getResult() {
     return this.result;
@@ -11,12 +19,12 @@ public class CalculateBase {
     this.result = result;
   }
 
-  public double getLeftVal() {
-    return this.leftVal;
-  }
-
   public void setLeftVal(double leftValue) {
     this.leftVal = leftValue;
+  }
+
+  public double getLeftVal() {
+    return this.leftVal;
   }
 
   public void setRightVal(double rightValue) {
@@ -27,7 +35,5 @@ public class CalculateBase {
     return this.rightVal;
   }
 
-  public void calculate() {
-
-  }
+  public abstract void calculate();
 }
