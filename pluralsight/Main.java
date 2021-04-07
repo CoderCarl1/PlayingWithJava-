@@ -1,28 +1,72 @@
 package pluralsight;
 
+import java.util.Scanner;
+
 import pluralsight.calcengine.*;
 
 public class Main {
 
     public static void main(String[] args) {
-        performCalculations();
+        // performCalculations();
 
-        Divider divider = new Divider();
-        doCalculation(divider, 100.0d, 50.0d);
+        // Divider divider = new Divider();
+        // doCalculation(divider, 100.0d, 50.0d);
 
-        Adder adder = new Adder();
-        doCalculation(adder, 25.0d, 92.0d);
+        // Adder adder = new Adder();
+        // doCalculation(adder, 25.0d, 92.0d);
 
-        performMoreCalculations();
+        // performMoreCalculations();
+        executeInteractively();
+    }
+
+    static void executeInteractively() {
+        System.out.println();
+        System.out.print("Enter an operation and two numbers ");
+        System.out.println("(Valid options include add, subtract, divide, multiply)");
+        System.out.println("It should look like: add 10 20");
+        Scanner scanner = new Scanner(System.in);
+        String userInput = scanner.nextLine();
+        String[] parts = userInput.split(" ");
+        performOperation(parts);
+    }
+
+    private static void performOperation(String[] parts) {
+        MathOperation operation = MathOperation.valueOf(parts[0].toUpperCase());
+        double leftVal = Double.parseDouble(parts[1]);
+        double rightVal = Double.parseDouble(parts[2]);
+        CalculateBase calculation = createCalculation(operation, leftVal, rightVal);
+        calculation.calculate();
+        System.out.println("Operation performed: " + operation);
+        System.out.println("Answer: " + calculation.getResult());
+    }
+
+    public static CalculateBase createCalculation(MathOperation operation, double leftVal, double rightVal) {
+        CalculateBase calculation = null;
+
+        switch (operation) {
+        case ADD:
+            calculation = new Adder(leftVal, rightVal);
+            break;
+        case SUBTRACT:
+            calculation = new Subtract(leftVal, rightVal);
+            break;
+        case MULTIPLY:
+            calculation = new Multiplier(leftVal, rightVal);
+            break;
+        case DIVIDE:
+            calculation = new Divider(leftVal, rightVal);
+            break;
+        }
+
+        return calculation;
     }
 
     private static void performMoreCalculations() {
         CalculateBase[] calculations = { new Divider(100.0d, 50.0d), new Adder(25.0d, 92.0d),
-                new Subtract(225.0d, 17.0d), new Multiplier(11.0d, 3.0d)
-        };
+                new Subtract(225.0d, 17.0d), new Multiplier(11.0d, 3.0d) };
         System.out.println();
         System.out.println("Array calculations");
-        for(CalculateBase calculation : calculations){
+        for (CalculateBase calculation : calculations) {
             calculation.calculate();
         }
     }

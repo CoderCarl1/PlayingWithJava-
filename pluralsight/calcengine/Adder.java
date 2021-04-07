@@ -10,6 +10,6 @@ public class Adder extends CalculateBase {
   public void calculate() {
     double value = getLeftVal() + getRightVal();
     setResult(value);
-    System.out.println("result = " + getResult());
+    // System.out.println("result = " + getResult());
   }
 }
