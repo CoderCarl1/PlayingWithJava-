@@ -132,6 +132,7 @@ public class App {
      */
     
     // System.out.println(LocalDate.of(2011, Month.APRIL, 25) + seconds );
+
   }
 
   public void nonStaticMethod() {
@@ -166,6 +167,8 @@ public class App {
             .println("boo boo! wrong answer!\n" + "You have " + (questions.length - (i + 1)) + " Question\\s left.");
       }
     }
+    keyboardInput.close();
+
     if (score == questions.length)
       return "You got all the questions correct! you rock!";
     return "You got | " + score + " / " + questions.length + " |";
@@ -189,6 +192,7 @@ public class App {
       // System.out.println("invalid input, please enter a number.");
       // tryCatch();
     }
+    keyboardInput.close();
   }
 
   public static void nestedNumberGrid() {
@@ -256,10 +260,11 @@ public class App {
       if (response.toUpperCase().equals("Y")) {
         guessingGame();
       } else {
+        keyboardInput.close();
         return "Thanks for Playing. Game ending now.";
       }
     }
-
+    keyboardInput.close();
     return "You Win!";
   }
 

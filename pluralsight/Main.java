@@ -15,8 +15,24 @@ public class Main {
         // Adder adder = new Adder();
         // doCalculation(adder, 25.0d, 92.0d);
 
+        // executeInteractively();
         // performMoreCalculations();
-        executeInteractively();
+        dynamicInteractivity();
+    }
+
+    private static void dynamicInteractivity() {
+        DynamicHelper helper = new DynamicHelper(
+                new MathProcessing[] { new Adder(), new Subtract(), new Multiplier(), new Divider(), new PowerOf() });
+
+        System.out.println();
+        System.out.print("Enter an operation and two numbers ");
+        System.out.println("(Valid options include add, subtract, divide, multiply)");
+        System.out.println("It should look like: add 10 20");
+        Scanner scanner = new Scanner(System.in);
+        String userInput = scanner.nextLine();
+
+        helper.process(userInput);
+        scanner.close();
     }
 
     static void executeInteractively() {
@@ -28,6 +44,7 @@ public class Main {
         String userInput = scanner.nextLine();
         String[] parts = userInput.split(" ");
         performOperation(parts);
+        scanner.close();
     }
 
     private static void performOperation(String[] parts) {
