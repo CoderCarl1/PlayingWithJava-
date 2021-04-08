@@ -26,7 +26,7 @@ public class Main {
 
         System.out.println();
         System.out.print("Enter an operation and two numbers ");
-        System.out.println("(Valid options include add, subtract, divide, multiply)");
+        System.out.println("(Valid options include add, subtract, divide, multiply, power)");
         System.out.println("It should look like: add 10 20");
         Scanner scanner = new Scanner(System.in);
         String userInput = scanner.nextLine();

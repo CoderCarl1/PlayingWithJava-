@@ -1,6 +1,12 @@
 package pluralsight.calcengine;
 
 public class PowerOf implements MathProcessing{
+  private String formattedOutput;
+
+@Override
+public String getFormattedOutput(){
+  return formattedOutput;
+}
 
   @Override
   public String getKeyWord() {
@@ -9,7 +15,9 @@ public class PowerOf implements MathProcessing{
 
   @Override
   public double doCalculation(double leftVal, double rightVal) {
-    return Math.pow(leftVal, rightVal);
+    double product = Math.pow(leftVal, rightVal);
+    formattedOutput = leftVal + "to the power of " + rightVal + " is " + product;
+    return product;
   }
   
 }
